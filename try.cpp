@@ -9,7 +9,7 @@ using namespace std;
 
 void main(){
 	TilteShow();
-  LongLine();
+	LongLine();
 	// 1
 	//int int_small , int_large;
 	//int sum(0);
@@ -29,15 +29,28 @@ void main(){
 	// array 用法 类似于 带安全检查的 数组
 	 LongLine();   
 	//3
-  int sum3(0), temp;
-  cout<< "Enter some interger end with 0. \n";
-  while ( cin>> temp && temp != 0 ){
-    sum3 += temp;
-  }
-  cout<< "Sum is :"<< sum3 <<endl;
-  // 循环输入cin用法 , 条件判断的初始值 注意  
-  LongLine();//代替长线 inline 型
-
+	int sum3(0), temp;
+	cout<< "Enter some interger end with 0. \n";
+	while ( cin>> temp && temp != 0 ){
+		sum3 += temp;
+	}
+	cout<< "Sum is :"<< sum3 <<endl;
+	// 循环输入cin用法 , 条件判断的初始值 注意  
+	LongLine();//代替长线 inline 型
+	//4
+	double investsum_Daphne(kInitialCapital), investrate_Daphne(0.1);
+	double investsum_Cleo(kInitialCapital), investrate_Cleo(0.05);
+	int years(0);
+	while (investsum_Cleo <= investsum_Daphne) {
+		years += 1;
+		investsum_Daphne += (kInitialCapital * investrate_Daphne);
+    investsum_Cleo += (investsum_Cleo * investrate_Cleo);
+	}
+  cout<< "Over "<< years << " years\n"
+    << "Cloe :$ "<< investsum_Cleo
+    << " is richer than Daphne :$"<< investsum_Daphne<< endl;
+  //
+  LongLine();
 
 
 
