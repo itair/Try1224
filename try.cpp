@@ -120,8 +120,7 @@ void main(){
   //8
   char str[kMaxLetters];
   int count(0);
-  cout << " Enter some words, exit with 'done' \n";
-  
+  cout << " Enter some words, exit with 'done' \n";  
   while (cin >> str && 0 != strcmp(str, "done")) {
     count++;
   }
@@ -129,7 +128,13 @@ void main(){
   // 循环输入/
   longline(9);
   //9
-
+  string str1;
+  int count1(0);
+  cout << " Enter some words, exit with 'done' \n";  
+  while (cin >> str1 && "done" != str1) {
+    count1++;
+  }
+  cout << "Your entered a total of " << count1 << " words.\n";
 
 
 
