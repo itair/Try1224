@@ -5,6 +5,7 @@
 #include <iostream>
 #include <array>
 #include <string>
+#include <cstring>
 
 using namespace std;
 
@@ -14,6 +15,7 @@ const int kMonthsPerYear = 12;
 const array<string, kMonthsPerYear> kMonth = { "Jan", "Feb", "Mar", "Apr", 
   "May", "Jun", "Jul", "Aug", 
   "Oct", "Sep", "Nov", "Dec" };
+const int kMaxLetters = 20;
 
 struct Car 
 {
@@ -23,7 +25,7 @@ struct Car
 
 void main(){
   showtitle();
-  longline();
+  longline(1);
   // 1
   //int int_small , int_large;
   //int sum(0);
@@ -34,14 +36,14 @@ void main(){
   //}
   //cout<< "The sum from "<< int_small<< " to "<< int_large<< " is "<< sum<< endl; */
   // 循环起始位置
-  longline();    
+  longline(2);    
   //2
   array<double, kArSize> factorials;
  	factorials.at(0) = factorials.at(1) = 1.0;
  	for (int i = 2; i < kArSize; i++) factorials.at(i) = i * factorials.at(i-1);
   	for (int i = 0; i < kArSize; i++) cout<< i << "!= "<< factorials.at(i) <<endl;
   	// array 用法 类似于 带安全检查的 数组
-  longline();   
+  longline(3);   
   	//3
   //int sum3(0), temp;
   //cout<< "Enter some interger end with 0. \n";
@@ -50,7 +52,7 @@ void main(){
   //}
   //cout<< "Sum is :"<< sum3 <<endl;
   // 循环输入cin用法 , 条件判断的初始值 注意  
-  longline();//代替长线 inline 型
+  longline(4);//代替长线 inline 型
   //4
   double investsum_Daphne(kInitialCapital), investrate_Daphne(0.1);
   double investsum_Cleo(kInitialCapital), investrate_Cleo(0.05);
@@ -64,7 +66,7 @@ void main(){
        << "Cloe :$ " << investsum_Cleo
        << " is richer than Daphne :$" << investsum_Daphne << endl;
   //
-  longline();
+  longline(5);
   //5
   //int sum(0);
   //array<int, 12> sale_month;
@@ -76,7 +78,7 @@ void main(){
   //}
   //cout<< "The sum of sales: "<< sum<< endl;
   // 循环用法
-  longline();
+  longline(6);
   //6 
   //int sum_all(0);
   //array<int, 3> sum_in_year;
@@ -94,28 +96,42 @@ void main(){
   //}
   //cout << "\nSum of all 3 years : " << sum_all <<endl;
   // const 定义 不要放入. h中
-  longline();
+  longline(7);
   //7
-  int num_car;
-  cout << "How many cars do you wish to catalog? ";
-  cin >> num_car;
-  Car* cars = new  Car[num_car] ;
-  for (int i = 0; i < num_car; i++ ) {
-    cout << "Car #" << i << ":\n"
-         << "Please enter the make: ";
-    cin.get(); //流定向到下一行...准备getlin
-    getline(cin, cars[i].company_name);
-    cout << "Please enter the year made: ";
-    cin >> cars[i].year;
-    }
-  cout << "Here is your colleciton: \n";
-  for (int i =0; i < num_car; i++) {
-    cout << cars[i].year << "  " << cars[i].company_name << endl;
+   //int num_car;
+   //cout << "How many cars do you wish to catalog? ";
+   //cin >> num_car;
+   //Car* cars = new  Car[num_car] ;
+   //for (int i = 0; i < num_car; i++ ) {
+   //  cout << "Car #" << i << ":\n"
+   //       << "Please enter the make: ";
+   //  cin.get(); //流定向到下一行...准备getline
+   //  getline(cin, cars[i].company_name);
+   //  cout << "Please enter the year made: ";
+   //  cin >> cars[i].year;
+   //  }
+   //cout << "Here is your colleciton: \n";
+   //for (int i =0; i < num_car; i++) {
+   //  cout << cars[i].year << "  " << cars[i].company_name << endl;
+   //}
+   //delete [] cars;
+   //混合流中string的 geiline技巧 new 与 delete 
+  longline(8);
+  //8
+  char str[kMaxLetters];
+  int count(0);
+  cout << " Enter some words, exit with 'done' \n";
+  
+  while (cin >> str && 0 != strcmp(str, "done")) {
+    count++;
   }
-  delete [] cars;// 别忘了
-  // 混合流中string的 geiline技巧 
-  // new 与 delete 
-  longline();
-  system("pause");
+  cout << "Your entered a total of " << count << " words.\n";
+  // 循环输入/
+  longline(9);
+  //9
 
+
+
+
+  system("pause");
 }
